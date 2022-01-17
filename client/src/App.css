@@ -1,4 +1,27 @@
 .App {
-  text-align: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.gameInfo {
+  display: flex;
+  width: 100;
+  flex-direction: column;
+  align-items: center;
+}
+.gameInfo input {
+  width: 300px;
+  height: 50px;
+  font-size: 20px;
+  padding-left: 10px;
+}
+
+.gameInfo button {
+  width: 300px;
+  height: 50px;
+}
+.gameInfo button:hover {
+  cursor: pointer;
 }
 
