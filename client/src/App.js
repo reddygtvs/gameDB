@@ -12,16 +12,18 @@ function App() {
   const [year, setYear] = useState(0)
 
   const addGame = () => {
+    console.log(game,"\n",size,"\n",publisher,"\n",region,"\n",year,"\n")
     Axios.post("http://localhost:3001/create", {
       game: game,
       size: size,
       publisher: publisher,
       region: region,
-      year: year
+      year: year,
 
     }).then(() => {
       console.log("Success!!")
-    })
+      
+    }).catch(err => console.log(err))
   }
 
   const displayInfo = () => 

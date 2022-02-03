@@ -1,19 +1,20 @@
-const e = require('express');
+
 const express = require('express')
 const app = express()
 const mysql = require('mysql')
 const cors = require('cors')
 
 app.use(cors())
+app.use(express.json());
 
 const db = mysql.createConnection({
     user: 'root',
     host: 'localhost',
-    password: '',
+    password: 'TUshar123',
     database: 'gameDB',
 });
 
-app.post('/create', (req, res) => {
+app.post("/create", (req, res) => {
     const game = req.body.game;
     const size = req.body.size;
     const publisher = req.body.publisher;
