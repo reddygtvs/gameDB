@@ -1,6 +1,7 @@
 
 import './App.css';
-import { useState } from 'react';
+import React, { useState } from 'react';
+import Axios from 'axios';
 
 function App() {
 
@@ -9,6 +10,19 @@ function App() {
   const [publisher, setPublisher] = useState("")
   const [region, setRegion] = useState("")
   const [year, setYear] = useState(0)
+
+  const addGame = () => {
+    Axios.post("http://localhost:3001/create", {
+      game: game,
+      size: size,
+      publisher: publisher,
+      region: region,
+      year: year
+
+    }).then(() => {
+      console.log("Success!!")
+    })
+  }
 
   const displayInfo = () => 
     console.log(game,"\n",size,"\n",publisher,"\n",region,"\n",year,"\n")
@@ -26,7 +40,7 @@ function App() {
       <input type="text" onChange={(event) => setRegion(event.target.value)}/>
       <label>Year Released:</label>
       <input type="number" onChange={(event) => setYear(event.target.value)}/>
-      <button onClick={displayInfo}>Add Game</button>
+      <button onClick={addGame}>Add Game</button>
       </div>
 
     </div>
