@@ -11,6 +11,8 @@ function App() {
   const [region, setRegion] = useState("")
   const [year, setYear] = useState(0)
 
+  const [gameList, setGameList] = useState([])
+
   const addGame = () => {
     console.log(game,"\n",size,"\n",publisher,"\n",region,"\n",year,"\n")
     Axios.post("http://localhost:3001/create", {
@@ -24,6 +26,13 @@ function App() {
       console.log("Success!!")
       
     }).catch(err => console.log(err))
+  }
+
+  const getGames = () => {
+    Axios.get("http://localhost:3001/games").then((response) => {
+      console.log(response)
+      
+    })
   }
 
   const displayInfo = () => 
@@ -45,7 +54,7 @@ function App() {
       <button onClick={addGame}>Add Game</button>
       </div>
       <div className="games">
-        <button>Show Games</button>
+        <button onClick={getGames}>Show Games</button>
       </div>
       
 
