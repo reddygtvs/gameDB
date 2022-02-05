@@ -44,6 +44,10 @@ function App() {
       <input type="number" onChange={(event) => setYear(event.target.value)}/>
       <button onClick={addGame}>Add Game</button>
       </div>
+      <div className="games">
+        <button>Show Games</button>
+      </div>
+      
 
     </div>
   );
