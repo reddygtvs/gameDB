@@ -30,8 +30,7 @@ function App() {
 
   const getGames = () => {
     Axios.get("http://localhost:3001/games").then((response) => {
-      console.log(response)
-      
+      setGameList(response.data); 
     })
   }
 
@@ -55,6 +54,17 @@ function App() {
       </div>
       <div className="games">
         <button onClick={getGames}>Show Games</button>
+        {gameList.map((val,key) => {
+      return <div className="showgames">
+      <h3> Game: {val.name}</h3>
+      <h3> Size: {val.size}</h3>
+      <h3> Publisher: {val.publisher}</h3>
+      <h3> Region: {val.region}</h3>
+      <h3> Year: {val.year}</h3>
+      </div>
+         })}      
+
+
       </div>
       
 

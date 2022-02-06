@@ -33,3 +33,16 @@ button:hover {
   cursor: pointer;
 }
 
+.showgames {
+  width: 600px;
+  height: auto;
+  border: 1px solid black;
+  margin-top: 12px;
+  display: flex;
+  padding: 10px;
+
+}
+
+.showgames h3{
+  margin: 20px;
+}
