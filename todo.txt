@@ -1,0 +1,12 @@
+User Table 
+Factors Table
+Publisher Table 
+
+queries for each 
+
+Log in/Sign up Page 
+
+search based on factors 
+sort based on factors
+menu bar with log in/log out, display games, get games, add games, user profile
+additional tables if needed
