@@ -45,7 +45,34 @@ app.get("/games", (req, res) => {
     })
 })
 
+app.put("/update",(req,res) => {
+    const id = req.body.id;
+    const size= req.body.size;
+    db.query("UPDATE games SET size = ? WHERE id = ? ",
+    [size,id],
+    (err,result) => {
+        if(err) {
+            console.log(err);
+        } else {
+            res.send(result);
+        }
+    }
+    );
+})
 
+
+app.delete("/delete/:gid",(req,res) => {
+    const id = req.params.id;
+    db.query("DELETE FROM games WHERE id = ? ", id ,(err,result) => 
+    {
+        if(err) {
+            console.log(err);
+        } else {
+            res.send(result);
+        }
+    }
+    )
+})
 
 app.listen(3001, () => {
     console.log("Server running on port 3001")
