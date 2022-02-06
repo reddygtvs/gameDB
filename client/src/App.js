@@ -56,7 +56,7 @@ function App() {
         <button onClick={getGames}>Show Games</button>
         {gameList.map((val,key) => {
       return <div className="showgames">
-      <h3> Game: {val.name}</h3>
+      <h3> Game: {val.game}</h3>
       <h3> Size: {val.size}</h3>
       <h3> Publisher: {val.publisher}</h3>
       <h3> Region: {val.region}</h3>
