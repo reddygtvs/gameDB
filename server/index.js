@@ -47,9 +47,9 @@ app.get("/games", (req, res) => {
 
 app.put("/update",(req,res) => {
     const id = req.body.id;
-    const size= req.body.size;
-    db.query("UPDATE games SET size = ? WHERE id = ? ",
-    [size,id],
+    const game= req.body.game;
+    db.query("UPDATE games SET game = ? WHERE id = ? ",
+    [game,id],
     (err,result) => {
         if(err) {
             console.log(err);

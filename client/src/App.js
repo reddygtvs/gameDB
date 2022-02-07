@@ -11,7 +11,7 @@ function App() {
   const [region, setRegion] = useState("")
   const [year, setYear] = useState(0)
   
-  const[newsize,setNewSize] = useState(0);
+  const[newgame,setNewGame] = useState(0);
   const [gameList, setGameList] = useState([])
 
   const addGame = () => {
@@ -36,12 +36,12 @@ function App() {
   }
 
   const updateGame = (id) => {
-    Axios.put('http://localhost:3001/update',{size: newsize,id: id}).then((response) => {
+    Axios.put('http://localhost:3001/update',{game: newgame,id: id}).then((response) => {
       alert("update");
       setGameList(gameList.map((val) => {
         return val.id === id ? {
-          game: val.game,
-          size: newsize,
+          game: newgame,
+          size: val.size,
           publisher: val.publisher,
           region: val.region,
           year: val.year,
@@ -52,7 +52,7 @@ function App() {
     });
   };
   const deleteGame = (id) => {
-    Axios.delete(`http://localhost:3001/delete/${gid}`).then((response) => {
+    Axios.delete(`http://localhost:3001/delete/${id}`).then((response) => {
       setGameList(gameList.filter((val) => {
         return val.id != id;
       })
@@ -93,7 +93,7 @@ function App() {
       <h3> Region: {val.region}</h3>
       <h3> Year: {val.year}</h3>
       </div>
-      <div><input type="number" placeholder="<2000"  onChange ={(event) => {setNewSize(event.target.value);}} />
+      <div><input type="text" placeholder="<2000"  onChange ={(event) => {setNewGame(event.target.value);}} />
       <button onClick={() => {updateGame(val.id)}}>Update</button>
       <button onClick={() => {deleteGame(val.id)}}>Delete</button>
       </div>
