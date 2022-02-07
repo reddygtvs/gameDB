@@ -2,6 +2,21 @@
 import './App.css';
 import React, { useState } from 'react';
 import Axios from 'axios';
+import '@fontsource/roboto/300.css';
+import '@fontsource/roboto/400.css';
+import '@fontsource/roboto/500.css';
+import '@fontsource/roboto/700.css';
+// import * as React from 'react';
+import Stack from '@mui/material/Stack';
+import Button from '@mui/material/Button';
+import './BasicButtons.js';
+import './BasicTextFields.js';
+import Box from '@mui/material/Box';
+import TextField from '@mui/material/TextField';
+import './IconButtons.js';
+import IconButton from '@mui/material/IconButton';
+import DeleteIcon from '@mui/icons-material/Delete';
+
 
 function App() {
 
@@ -70,20 +85,22 @@ function App() {
     
     <div className="App">
       <div className="gameInfo">
-      <label>Game:</label>
-      <input type="text" onChange={(event) => setGame(event.target.value)}/>
-      <label>Size(MB):</label>
-      <input type="number" onChange={(event) => setSize(event.target.value)}/>
-      <label>Publisher:</label>
-      <input type="text" onChange={(event) => setPublisher(event.target.value)}/>
-      <label>Region:</label>
-      <input type="text" onChange={(event) => setRegion(event.target.value)}/>
-      <label>Year Released:</label>
-      <input type="number" onChange={(event) => setYear(event.target.value)}/>
-      <button onClick={addGame}>Add Game</button>
+      <h1>Enter Game Input Details:</h1>
+      <label></label>
+      
+      <TextField id="outlined-basic" label="GAME" variant="outlined" type="text" onChange={(event) => setGame(event.target.value)}/>
+      <label></label>
+      <TextField id="outlined-basic" label="SIZE(MB)" variant="outlined" type="number" onChange={(event) => setSize(event.target.value)}/>
+      {/* <label>Publisher:</label> */}
+      <TextField id="outlined-basic" label="PUBLISHER" variant="outlined" type="text" onChange={(event) => setPublisher(event.target.value)}/>
+      {/* <label>Region:</label> */}
+      <TextField id="outlined-basic" label="REGION" variant="outlined" type="text" onChange={(event) => setRegion(event.target.value)}/>
+      {/* <label>Year Released:</label> */}
+      <TextField id="outlined-basic" label="YEAR RELEASED" variant="outlined" type="number" onChange={(event) => setYear(event.target.value)}/>
+      <Button variant="contained" onClick={addGame}>ADD GAME</Button>
       </div>
       <div className="games">
-        <button onClick={getGames}>Show Games</button>
+        <Button variant="contained" onClick={getGames}>SHOW GAMES</Button>
         {gameList.map((val,key) => {
       return <div className="showgames">
       <div>
@@ -93,9 +110,12 @@ function App() {
       <h3> Region: {val.region}</h3>
       <h3> Year: {val.year}</h3>
       </div>
-      <div><input type="text" placeholder="<2000"  onChange ={(event) => {setNewGame(event.target.value);}} />
-      <button onClick={() => {updateGame(val.id)}}>Update</button>
-      <button onClick={() => {deleteGame(val.id)}}>Delete</button>
+      <div><TextField id="outlined-basic" label="EDITED GAME" variant="outlined" type="text" onChange ={(event) => {setNewGame(event.target.value);}} />
+      <div>
+      <Button variant="contained" onClick={() => {updateGame(val.id)}}>UPDATE</Button>
+      <Button variant="contained" onClick={() => {deleteGame(val.id)}}>Delete</Button>
+      </div>
+      
       </div>
       </div>
          })}      
@@ -107,5 +127,7 @@ function App() {
     </div>
   );
 }
+
+
 
 export default App;
