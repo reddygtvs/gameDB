@@ -7,16 +7,13 @@ import '@fontsource/roboto/400.css';
 import '@fontsource/roboto/500.css';
 import '@fontsource/roboto/700.css';
 // import * as React from 'react';
-import Stack from '@mui/material/Stack';
 import Button from '@mui/material/Button';
 import './BasicButtons.js';
 import './BasicTextFields.js';
-import Box from '@mui/material/Box';
 import TextField from '@mui/material/TextField';
 import './IconButtons.js';
-import IconButton from '@mui/material/IconButton';
-import DeleteIcon from '@mui/icons-material/Delete';
-
+import Navbar from './Navbar';
+import { BrowserRouter as Router } from "react-router-dom";
 
 function App() {
 
@@ -83,7 +80,12 @@ function App() {
     console.log(game,"\n",size,"\n",publisher,"\n",region,"\n",year,"\n")
   return (
     
+    
     <div className="App">
+      <Router>
+      {<Navbar />}
+      </Router>
+      
       <div className="gameInfo">
       <h1>Enter Game Input Details:</h1>
       <label></label>
