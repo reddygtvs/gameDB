@@ -43,14 +43,14 @@ function Navbar() {
             <Link to="/" className={classes.link}>
               Home
             </Link>
-            <Link to="/about" className={classes.link}>
-              About
+            <Link to="/login" className={classes.link}>
+              Login
             </Link>
-            <Link to="/contact" className={classes.link}>
-              Contact
+            <Link to="/signup" className={classes.link}>
+              Signup
             </Link>
-            <Link to="/faq" className={classes.link}>
-              FAQ
+            <Link to="/display" className={classes.link}>
+              Login
             </Link>
           </div>
       </Toolbar>
