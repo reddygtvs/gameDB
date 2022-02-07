@@ -12,11 +12,8 @@ import './BasicButtons.js';
 import './BasicTextFields.js';
 import TextField from '@mui/material/TextField';
 import './IconButtons.js';
-import Navbar from './Navbar';
-import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
-import Login from './Login.js';
-import Signup from './Signup.js';
-import Display from './Display.js';
+
+
 
 function App() {
 
@@ -86,16 +83,7 @@ function App() {
     
     <div className="App">
       
-      <Router>
-    <Navbar />
-    <Routes>
-    <Route exact path="/" element={<Login />} />
-      <Route exact path="/login" element={<Login />} />
-      <Route exact path="/signup" element={<Signup />} />
-      <Route exact path="/display" element={<Display />} />
-    </Routes>
-
-      </Router>
+      
       <div className="gameInfo">
       <h1>Enter Game Input Details:</h1>
       

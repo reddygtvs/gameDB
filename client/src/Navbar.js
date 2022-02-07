@@ -50,7 +50,7 @@ function Navbar() {
               Signup
             </Link>
             <Link to="/display" className={classes.link}>
-              Login
+              Display
             </Link>
           </div>
       </Toolbar>
