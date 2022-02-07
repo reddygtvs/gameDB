@@ -61,7 +61,7 @@ app.put("/update",(req,res) => {
 })
 
 
-app.delete("/delete/:gid",(req,res) => {
+app.delete("/delete/:id",(req,res) => {
     const id = req.params.id;
     db.query("DELETE FROM games WHERE id = ? ", id ,(err,result) => 
     {
