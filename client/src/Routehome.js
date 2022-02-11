@@ -8,6 +8,7 @@ import App from './App';
 import Logout from './Logout.js'
 import About from './About.js'
 import Publish from './Publish';
+import Addpublish from './Addpublish'
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 
 function Routehome() {
@@ -46,8 +47,8 @@ function Routehome() {
     <Routes>
     <Route exact path="/" element={<App logstate={logstate} setLogstate={setLogstate}/>} />
       <Route exact path="/login" element={<Login logstate={logstate} setLogstate={setLogstate}/>} />
-      <Route exact path="/signup" element={<Signup />} />
       <Route exact path="/display" element={<Display />} />
+      <Route exact path="/addpublish" element={<Addpublish />} />
     </Routes>
 
       </Router>

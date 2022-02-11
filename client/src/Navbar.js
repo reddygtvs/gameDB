@@ -46,11 +46,11 @@ function Navbar() {
             <Link to="/login" className={classes.link}>
               Login
             </Link>
-            <Link to="/signup" className={classes.link}>
-              Signup
-            </Link>
             <Link to="/display" className={classes.link}>
               Display
+            </Link>
+            <Link to="/addpublish" className={classes.link}>
+              Add/Publish
             </Link>
           </div>
       </Toolbar>
