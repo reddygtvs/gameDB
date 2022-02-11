@@ -20,7 +20,7 @@ function Routehome() {
     <Navbaru />
     <Routes>
     <Route exact path="/" element={<App logstate={logstate} setLogstate={setLogstate}/>} />
-      <Route exact path="/logout" element={<Logout />} />
+      <Route exact path="/logout" element={<Logout logstate={logstate} setLogstate={setLogstate}/>} />
       <Route exact path="/display" element={<Display />} />
       <Route exact path="/addgame" element={<Addgame />} />
       <Route exact path="/about" element={<About />} />

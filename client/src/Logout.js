@@ -1,8 +1,20 @@
 import React from 'react'
+import { useNavigate } from "react-router-dom";
 
-const Logout = (props) => {
+const Logout = ({logstate, setLogstate}) => {
+    const navigate = useNavigate();
+
+
+    const setLogo = () => {
+        setLogstate(0)
+        navigate("/")
+
+    }
   return (
-    <div>Logout</div>
+    <div>
+        <h1>Do you want to Logout?/</h1>
+        <button onClick={setLogo}>Logout</button>
+        </div>
   )
 }
 
