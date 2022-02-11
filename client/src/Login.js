@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import './App.css';
 import Axios from 'axios';
+import { useNavigate } from "react-router-dom";
 
 function Login() {
   const [pubname,setPubName] = useState("");
@@ -12,6 +13,10 @@ function Login() {
     const[newemail,setNewEmail] = useState("");
     const [pubList,setPubList] = useState([]);
     const [userList,setUserList] = useState([]);
+    const [loginstatus, setLoginStatus] = useState([])
+    const navigate = useNavigate();
+
+
 
     const register = () => {
       Axios.post('http://localhost:3001/login/register', {
@@ -29,7 +34,12 @@ function Login() {
         // email:email,
         pass: password
       }).then((response) => {
-        console.log(response)
+        if (response.data.message) {
+          setLoginStatus(response.data.message) 
+        } else {
+          setLoginStatus("Welcome, " + response.data[0].pubname)
+          navigate("/")
+        }
       })
     }
 
@@ -66,8 +76,9 @@ function Login() {
           setPassword(e.target.value)
         }}/>
         <button onClick={login}> Login </button>
-
+        <h1>{loginstatus}</h1>
       </div>
+      
     </div>
 
   )
