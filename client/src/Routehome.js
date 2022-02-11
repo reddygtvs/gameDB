@@ -3,8 +3,11 @@ import Login from './Login.js';
 import Signup from './Signup.js';
 import Display from './Display.js';
 import Navbar from './Navbar';
+import Navbarp from './Navbarp';
 import App from './App';
 import Logout from './Logout.js'
+import About from './About.js'
+import Publish from './Publish';
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 
 function Routehome() {
@@ -25,12 +28,13 @@ function Routehome() {
   } else if (logstate == 2) {
     return (<div>
       <Router>
-    <Navbar />
+    <Navbarp />
     <Routes>
     <Route exact path="/" element={<App logstate={logstate} setLogstate={setLogstate}/>} />
-      <Route exact path="/login" element={<Logout />} />
-      <Route exact path="/signup" element={<Signup />} />
+      <Route exact path="/logout" element={<Logout logstate={logstate} setLogstate={setLogstate}/>} />
       <Route exact path="/display" element={<Display />} />
+      <Route exact path="/publish" element={<Publish />} />
+      <Route exact path="/about" element={<About />} />
     </Routes>
 
       </Router>
