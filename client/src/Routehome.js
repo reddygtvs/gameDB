@@ -1,6 +1,5 @@
 import React, { useState } from 'react';
 import Login from './Login.js';
-import Signup from './Signup.js';
 import Display from './Display.js';
 import Navbar from './Navbar';
 import Navbarp from './Navbarp';
@@ -9,6 +8,8 @@ import Logout from './Logout.js'
 import About from './About.js'
 import Publish from './Publish';
 import Addpublish from './Addpublish'
+import Addgame from './Addgame';
+import Navbaru from './Navbaru';
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 
 function Routehome() {
@@ -16,12 +17,13 @@ function Routehome() {
   if (logstate == 1) {
   return (<div>
       <Router>
-    <Navbar />
+    <Navbaru />
     <Routes>
     <Route exact path="/" element={<App logstate={logstate} setLogstate={setLogstate}/>} />
-      <Route exact path="/login" element={<Logout />} />
-      <Route exact path="/signup" element={<Signup />} />
+      <Route exact path="/logout" element={<Logout />} />
       <Route exact path="/display" element={<Display />} />
+      <Route exact path="/addgame" element={<Addgame />} />
+      <Route exact path="/about" element={<About />} />
     </Routes>
 
       </Router>
