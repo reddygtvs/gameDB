@@ -6,7 +6,7 @@ router.use(cors());
 
 // router.use(express.json());
 
-router.post("/register",(req,res) => {
+router.post("/registerpub",(req,res) => {
     const pubname = req.body.pubname;
     const email = req.body.email;
     const pass = req.body.pass;
@@ -18,7 +18,19 @@ router.post("/register",(req,res) => {
     );
 });
 
-router.post("/login",(req,res) => {
+router.post("/registeruser",(req,res) => {
+    const username = req.body.pubname;
+    const email = req.body.email;
+    const pass = req.body.pass;
+    db.query("INSERT INTO user (username,email,pass) VALUES(?,?,?) ",
+    [username,email,pass],
+    (err,result) => {
+        console.log(result);
+    }
+    );
+});
+
+router.post("/loginpub",(req,res) => {
     const pubname = req.body.pubname;
     // const email = req.body.email;
     const pass = req.body.pass;
