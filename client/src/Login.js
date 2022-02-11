@@ -62,7 +62,7 @@ const Login = ( {logstate, setLogstate} ) => {
         } else {
           setLoginStatus("Welcome, Publisher " + response.data[0].pubname)
           setlogp()
-          // navigate("/")
+          navigate("/")
         }
       })
     }
@@ -78,7 +78,7 @@ const Login = ( {logstate, setLogstate} ) => {
         } else {
           setLoginStatus("Welcome, User " + response.data[0].username)
           setlogu()
-          // navigate("/")
+          navigate("/")
         }
       })
     }
