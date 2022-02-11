@@ -82,12 +82,18 @@ const App = (props) => {
     
     
     <div className="App">
+      
       <div>
       <TextField id="outlined-basic" label="GAME" variant="outlined" type="number" onChange={(event) => props.setLogstate(event.target.value)}/>
       </div>
       
       
       <div className="gameInfo">
+      <h1>Welcome to GameDatabase</h1>
+        <h2>Features available:</h2>
+        <h2>Publish Games</h2>
+        <h2>Add/Modify/Remove games from your list</h2>
+        <h2>Search and Filter Database for choices</h2>
       <h1>Enter Game Input Details:</h1>
       
       <TextField id="outlined-basic" label="GAME" variant="outlined" type="text" onChange={(event) => setGame(event.target.value)}/>

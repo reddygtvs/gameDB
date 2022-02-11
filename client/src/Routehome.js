@@ -14,6 +14,9 @@ import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 
 function Routehome() {
   const [logstate, setLogstate] = useState(0)
+  const [usernamedisplay, setUsernameDisplay] = useState("")
+  const [emaildisplay, setEmailDisplay] = useState("")
+  const [passworddisplay, setPasswordDisplay] = useState("")
   if (logstate == 1) {
   return (<div>
       <Router>
