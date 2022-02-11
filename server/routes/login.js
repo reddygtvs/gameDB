@@ -50,6 +50,26 @@ router.post("/loginpub",(req,res) => {
     );
 });
 
+router.post("/loginuser",(req,res) => {
+    const username = req.body.pubname;
+    // const email = req.body.email;
+    const pass = req.body.pass;
+    db.query("SELECT * FROM user WHERE username = ? AND pass = ?",
+    [username,pass],
+    (err,result) => {
+        if (err) {
+            res.send({err: err})
+        }
+        if (result.length > 0) {
+            res.send(result)
+            
+        } else {
+            res.send({message: "Wrong username/password combination"})
+        }
+    }
+    );
+});
+
 
 
 module.exports = router;

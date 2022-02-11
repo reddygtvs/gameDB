@@ -4,6 +4,7 @@ import Signup from './Signup.js';
 import Display from './Display.js';
 import Navbar from './Navbar';
 import App from './App';
+import Logout from './Logout.js'
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 
 function Routehome() {
@@ -14,9 +15,9 @@ function Routehome() {
     <Navbar />
     <Routes>
     <Route exact path="/" element={<App logstate={logstate} setLogstate={setLogstate}/>} />
-      <Route exact path="/login" element={<Display />} />
+      <Route exact path="/login" element={<Logout />} />
       <Route exact path="/signup" element={<Signup />} />
-      <Route exact path="/display" element={<Login />} />
+      <Route exact path="/display" element={<Display />} />
     </Routes>
 
       </Router>
@@ -27,8 +28,8 @@ function Routehome() {
     <Navbar />
     <Routes>
     <Route exact path="/" element={<App logstate={logstate} setLogstate={setLogstate}/>} />
-      <Route exact path="/login" element={<Signup />} />
-      <Route exact path="/signup" element={<Login />} />
+      <Route exact path="/login" element={<Logout />} />
+      <Route exact path="/signup" element={<Signup />} />
       <Route exact path="/display" element={<Display />} />
     </Routes>
 
@@ -40,7 +41,7 @@ function Routehome() {
     <Navbar />
     <Routes>
     <Route exact path="/" element={<App logstate={logstate} setLogstate={setLogstate}/>} />
-      <Route exact path="/login" element={<Login />} />
+      <Route exact path="/login" element={<Login logstate={logstate} setLogstate={setLogstate}/>} />
       <Route exact path="/signup" element={<Signup />} />
       <Route exact path="/display" element={<Display />} />
     </Routes>
