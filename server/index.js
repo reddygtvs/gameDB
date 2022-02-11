@@ -1,18 +1,21 @@
 
 const express = require('express')
 const app = express()
-const mysql = require('mysql')
+// const mysql = require('mysql')
 const cors = require('cors')
 
 app.use(cors())
 app.use(express.json());
 
-const db = mysql.createConnection({
-    user: 'root',
-    host: 'localhost',
-    password: 'password',
-    database: 'gameDB',
-});
+const loginRouter = require('./routes/login.js');
+app.use("/login", loginRouter);
+
+// const db = mysql.createConnection({
+//     user: 'root',
+//     host: 'localhost',
+//     password: 'password',
+//     database: 'gameDB',
+// });
 
 app.post("/create", (req, res) => {
     const game = req.body.game;

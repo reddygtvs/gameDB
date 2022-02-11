@@ -15,7 +15,7 @@ import './IconButtons.js';
 
 
 
-function App() {
+const App = (props) => {
 
   const [game, setGame] = useState("")
   const [size, setSize] = useState(0)
@@ -82,6 +82,9 @@ function App() {
     
     
     <div className="App">
+      <div>
+      <TextField id="outlined-basic" label="GAME" variant="outlined" type="number" onChange={(event) => props.setLogstate(event.target.value)}/>
+      </div>
       
       
       <div className="gameInfo">
