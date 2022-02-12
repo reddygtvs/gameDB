@@ -15,6 +15,7 @@ import './IconButtons.js';
 const Display = () => {
 
   const[gamelistall, setGameListAll] = useState([])
+  const[search, setSearch] = useState("")
 
 
   const getGamesAll = () => {
@@ -40,6 +41,7 @@ const Display = () => {
       <h3> Year: {val.year}</h3>
       <h3> Publisher: {val.pubname}</h3>
       </div>
+      {/* {console.log(gamelistall.gName)} */}
       
       </div>
          })}      
