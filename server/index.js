@@ -13,6 +13,9 @@ app.use("/login", loginRouter);
 const pubRouter = require('./routes/publisher.js');
 app.use("/publisher", pubRouter);
 
+const userRouter = require('./routes/user.js');
+app.use("/user", userRouter);
+
 // const db = mysql.createConnection({
 //     user: 'root',
 //     host: 'localhost',
