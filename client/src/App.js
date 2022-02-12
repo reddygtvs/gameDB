@@ -63,10 +63,10 @@ const App = ( {logstate, setLogstate, usernamedisplay} ) => {
       ));
     });
   };
-  const deleteGame = (id) => {
-    Axios.delete(`http://localhost:3001/delete/${id}`).then((response) => {
+  const deleteGame = (gid) => {
+    Axios.delete(`http://localhost:3001/delete/${gid}`).then((response) => {
       setGameList(gameList.filter((val) => {
-        return val.id != id;
+        return val.gid != gid;
       })
       );
     });

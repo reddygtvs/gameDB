@@ -57,11 +57,19 @@ const Publish = ( {usernamedisplay} ) => {
           region: val.region,
           gametype: val.gametype,
           year: val.year,
-          publisher: val.pubname
+          pubname: val.pubname
         } : val;
       }
       
       ));
+    });
+  };
+  const deleteGame = (gid) => {
+    Axios.delete(`http://localhost:3001/publisher/delete/${gid}`).then((response) => {
+      setGameList(gameList.filter((val) => {
+        return val.gid != gid;
+      })
+      );
     });
   };
   return (
@@ -83,7 +91,7 @@ const Publish = ( {usernamedisplay} ) => {
       return <div className="showgames">
       <div>
       <h3> Game: {val.gName}</h3>
-      <h3> Size: {val.size}</h3>
+      <h3> Size(GB): {val.size}</h3>
       <h3> Region: {val.region}</h3>
       <h3> Genre: {val.gametype}</h3>
       <h3> Year: {val.year}</h3>
@@ -92,7 +100,7 @@ const Publish = ( {usernamedisplay} ) => {
       <div><TextField id="outlined-basic" label="EDITED GAME" variant="outlined" type="text" onChange ={(event) => {setNewGame(event.target.value);}} />
       <div>
       <Button variant="contained" onClick={() => {updateGame(val.gid)}}>UPDATE</Button>
-      {/* <Button variant="contained" onClick={() => {deleteGame(val.id)}}>Delete</Button> */}
+      <Button variant="contained" onClick={() => {deleteGame(val.gid)}}>DELETE</Button>
       </div>
       
       </div>

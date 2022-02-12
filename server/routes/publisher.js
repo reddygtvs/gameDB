@@ -52,4 +52,17 @@ router.put("/update",(req,res) => {
     );
 })
 
+router.delete("/delete/:gid",(req,res) => {
+    const gid = req.params.gid;
+    db.query("DELETE FROM games WHERE gid = ? ", gid ,(err,result) => 
+    {
+        if(err) {
+            console.log(err);
+        } else {
+            res.send(result);
+        }
+    }
+    )
+})
+
 module.exports = router;
