@@ -6,7 +6,7 @@ import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 
 
 
-const Login = ( {logstate, setLogstate} ) => {
+const Login = ( {logstate, setLogstate, setUsernameDisplay, setPasswordDisplay} ) => {
   const [pubname,setPubName] = useState("");
   const [username,setUserName] = useState("");
   const [pubnamecheck, setPubNameCheck] = useState("")
@@ -24,9 +24,11 @@ const Login = ( {logstate, setLogstate} ) => {
     const [togglelog, setToggleLog] = useState("publisher")
 
     const setlogu = () => {
+      setUsernameDisplay(pubnamecheck)
       setLogstate(1)
     }
     const setlogp = () => {
+      setUsernameDisplay(pubnamecheck)
       setLogstate(2)
     }
 

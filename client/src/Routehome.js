@@ -14,7 +14,7 @@ import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 
 function Routehome() {
   const [logstate, setLogstate] = useState(0)
-  const [usernamedisplay, setUsernameDisplay] = useState("")
+  const [usernamedisplay, setUsernameDisplay] = useState("Guest")
   const [emaildisplay, setEmailDisplay] = useState("")
   const [passworddisplay, setPasswordDisplay] = useState("")
   if (logstate == 1) {
@@ -22,8 +22,8 @@ function Routehome() {
       <Router>
     <Navbaru />
     <Routes>
-    <Route exact path="/" element={<App logstate={logstate} setLogstate={setLogstate}/>} />
-      <Route exact path="/logout" element={<Logout logstate={logstate} setLogstate={setLogstate}/>} />
+    <Route exact path="/" element={<App logstate={logstate} setLogstate={setLogstate} usernamedisplay={usernamedisplay}/>} />
+      <Route exact path="/logout" element={<Logout logstate={logstate} setLogstate={setLogstate} setUsernameDisplay={setUsernameDisplay}/>} />
       <Route exact path="/display" element={<Display />} />
       <Route exact path="/addgame" element={<Addgame />} />
       <Route exact path="/about" element={<About />} />
@@ -36,8 +36,8 @@ function Routehome() {
       <Router>
     <Navbarp />
     <Routes>
-    <Route exact path="/" element={<App logstate={logstate} setLogstate={setLogstate}/>} />
-      <Route exact path="/logout" element={<Logout logstate={logstate} setLogstate={setLogstate}/>} />
+    <Route exact path="/" element={<App logstate={logstate} setLogstate={setLogstate} usernamedisplay={usernamedisplay}/>} />
+      <Route exact path="/logout" element={<Logout logstate={logstate} setLogstate={setLogstate} setUsernameDisplay={setUsernameDisplay}/>} />
       <Route exact path="/display" element={<Display />} />
       <Route exact path="/publish" element={<Publish />} />
       <Route exact path="/about" element={<About />} />
@@ -50,8 +50,8 @@ function Routehome() {
       <Router>
     <Navbar />
     <Routes>
-    <Route exact path="/" element={<App logstate={logstate} setLogstate={setLogstate}/>} />
-      <Route exact path="/login" element={<Login logstate={logstate} setLogstate={setLogstate}/>} />
+    <Route exact path="/" element={<App logstate={logstate} setLogstate={setLogstate} usernamedisplay={usernamedisplay}/>} />
+      <Route exact path="/login" element={<Login logstate={logstate} setLogstate={setLogstate} setUsernameDisplay={setUsernameDisplay}/>} />
       <Route exact path="/display" element={<Display />} />
       <Route exact path="/addpublish" element={<Addpublish />} />
     </Routes>

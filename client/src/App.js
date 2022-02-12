@@ -15,7 +15,7 @@ import './IconButtons.js';
 
 
 
-const App = (props) => {
+const App = ( {logstate, setLogstate, usernamedisplay} ) => {
 
   const [game, setGame] = useState("")
   const [size, setSize] = useState(0)
@@ -83,13 +83,14 @@ const App = (props) => {
     
     <div className="App">
       
-      <div>
+      {/* <div>
       <TextField id="outlined-basic" label="GAME" variant="outlined" type="number" onChange={(event) => props.setLogstate(event.target.value)}/>
-      </div>
+      </div> */}
       
       
       <div className="gameInfo">
-      <h1>Welcome to GameDatabase</h1>
+      <h1>Welcome to GameDatabase,</h1>
+      <h1>{usernamedisplay}</h1>
         <h2>Features available:</h2>
         <h2>Publish Games</h2>
         <h2>Add/Modify/Remove games from your list</h2>
@@ -97,13 +98,9 @@ const App = (props) => {
       <h1>Enter Game Input Details:</h1>
       
       <TextField id="outlined-basic" label="GAME" variant="outlined" type="text" onChange={(event) => setGame(event.target.value)}/>
-      <label></label>
       <TextField id="outlined-basic" label="SIZE(MB)" variant="outlined" type="number" onChange={(event) => setSize(event.target.value)}/>
-      {/* <label>Publisher:</label> */}
       <TextField id="outlined-basic" label="PUBLISHER" variant="outlined" type="text" onChange={(event) => setPublisher(event.target.value)}/>
-      {/* <label>Region:</label> */}
       <TextField id="outlined-basic" label="REGION" variant="outlined" type="text" onChange={(event) => setRegion(event.target.value)}/>
-      {/* <label>Year Released:</label> */}
       <TextField id="outlined-basic" label="YEAR RELEASED" variant="outlined" type="number" onChange={(event) => setYear(event.target.value)}/>
       <Button variant="contained" onClick={addGame}>ADD GAME</Button>
       </div>

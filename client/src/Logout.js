@@ -1,11 +1,12 @@
 import React from 'react'
 import { useNavigate } from "react-router-dom";
 
-const Logout = ({logstate, setLogstate}) => {
+const Logout = ({logstate, setLogstate, setUsernameDisplay}) => {
     const navigate = useNavigate();
 
 
     const setLogo = () => {
+        setUsernameDisplay("Guest")
         setLogstate(0)
         navigate("/")
 
