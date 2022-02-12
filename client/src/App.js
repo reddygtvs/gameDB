@@ -83,11 +83,6 @@ const App = ( {logstate, setLogstate, usernamedisplay} ) => {
     
     <div className="App">
       
-      {/* <div>
-      <TextField id="outlined-basic" label="GAME" variant="outlined" type="number" onChange={(event) => props.setLogstate(event.target.value)}/>
-      </div> */}
-      
-      
       <div className="gameInfo">
       <h1>Welcome to GameDatabase,</h1>
       <h1>{usernamedisplay}</h1>

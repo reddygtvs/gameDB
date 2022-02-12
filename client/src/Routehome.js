@@ -39,7 +39,7 @@ function Routehome() {
     <Route exact path="/" element={<App logstate={logstate} setLogstate={setLogstate} usernamedisplay={usernamedisplay}/>} />
       <Route exact path="/logout" element={<Logout logstate={logstate} setLogstate={setLogstate} setUsernameDisplay={setUsernameDisplay}/>} />
       <Route exact path="/display" element={<Display />} />
-      <Route exact path="/publish" element={<Publish />} />
+      <Route exact path="/publish" element={<Publish usernamedisplay={usernamedisplay}/>} />
       <Route exact path="/about" element={<About />} />
     </Routes>
 

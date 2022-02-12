@@ -10,6 +10,9 @@ app.use(express.json());
 const loginRouter = require('./routes/login.js');
 app.use("/login", loginRouter);
 
+const pubRouter = require('./routes/publisher.js');
+app.use("/publisher", pubRouter);
+
 // const db = mysql.createConnection({
 //     user: 'root',
 //     host: 'localhost',
