@@ -24,4 +24,17 @@ router.post("/create",(req,res) => {
     );
 });
 
+router.post("/games", (req, res) => {
+    const usernamedisplay = req.body.usernamedisplay
+    db.query("SELECT * FROM games WHERE pubname = ?",
+    [usernamedisplay], (err, result) => {
+        if (err) {
+            console.log(err)
+        } else {
+            res.send(result)
+        }
+
+    })
+})
+
 module.exports = router;

@@ -38,6 +38,14 @@ const Publish = ( {usernamedisplay} ) => {
       
     }).catch(err => console.log(err))
   }
+  const getGames = () => {
+    Axios.post("http://localhost:3001/publisher/games",{
+      usernamedisplay: usernamedisplay,
+    }).then((response) => {
+      console.log(response.data);
+      setGameList(response.data); 
+    })
+  }
   return (
     <div className="App">
       
@@ -51,29 +59,30 @@ const Publish = ( {usernamedisplay} ) => {
       <TextField id="outlined-basic" label="YEAR RELEASED" variant="outlined" type="number" onChange={(event) => setYear(event.target.value)}/>
       <Button variant="contained" onClick={addGame}>ADD GAME</Button>
       </div>
-      {/* <div className="games">
+      <div className="games">
         <Button variant="contained" onClick={getGames}>SHOW GAMES</Button>
         {gameList.map((val,key) => {
       return <div className="showgames">
       <div>
-      <h3> Game: {val.game}</h3>
+      <h3> Game: {val.gName}</h3>
       <h3> Size: {val.size}</h3>
-      <h3> Publisher: {val.publisher}</h3>
       <h3> Region: {val.region}</h3>
+      <h3> Genre: {val.gametype}</h3>
       <h3> Year: {val.year}</h3>
+      <h3> Publisher: {val.pubname}</h3>
       </div>
-      <div><TextField id="outlined-basic" label="EDITED GAME" variant="outlined" type="text" onChange ={(event) => {setNewGame(event.target.value);}} />
+      {/* <div><TextField id="outlined-basic" label="EDITED GAME" variant="outlined" type="text" onChange ={(event) => {setNewGame(event.target.value);}} />
       <div>
       <Button variant="contained" onClick={() => {updateGame(val.id)}}>UPDATE</Button>
       <Button variant="contained" onClick={() => {deleteGame(val.id)}}>Delete</Button>
       </div>
       
-      </div>
+      </div> */}
       </div>
          })}      
 
 
-      </div> */}
+      </div>
       
 
     </div>

@@ -90,7 +90,7 @@ const App = ( {logstate, setLogstate, usernamedisplay} ) => {
         <h2>Publish Games</h2>
         <h2>Add/Modify/Remove games from your list</h2>
         <h2>Search and Filter Database for choices</h2>
-      <h1>Enter Game Input Details:</h1>
+      {/* <h1>Enter Game Input Details:</h1>
       
       <TextField id="outlined-basic" label="GAME" variant="outlined" type="text" onChange={(event) => setGame(event.target.value)}/>
       <TextField id="outlined-basic" label="SIZE(MB)" variant="outlined" type="number" onChange={(event) => setSize(event.target.value)}/>
@@ -118,7 +118,7 @@ const App = ( {logstate, setLogstate, usernamedisplay} ) => {
       
       </div>
       </div>
-         })}      
+         })}       */}
 
 
       </div>

@@ -20,65 +20,65 @@ app.use("/publisher", pubRouter);
 //     database: 'gameDB',
 // });
 
-app.post("/create", (req, res) => {
-    const game = req.body.game;
-    const size = req.body.size;
-    const publisher = req.body.publisher;
-    const region = req.body.region;
-    const year = req.body.year;
+// app.post("/create", (req, res) => {
+//     const game = req.body.game;
+//     const size = req.body.size;
+//     const publisher = req.body.publisher;
+//     const region = req.body.region;
+//     const year = req.body.year;
 
-    db.query(
-        "INSERT INTO games (game, size, publisher, region, year) VALUES (?,?,?,?,?)",
-        [game, size, publisher, region, year],
-        (err, result) => {
-            if (err) {
-                console.log(err);
-            } else {
-                res.send("Values inserted");
-            }
-        }
-    );
-});
+//     db.query(
+//         "INSERT INTO games (game, size, publisher, region, year) VALUES (?,?,?,?,?)",
+//         [game, size, publisher, region, year],
+//         (err, result) => {
+//             if (err) {
+//                 console.log(err);
+//             } else {
+//                 res.send("Values inserted");
+//             }
+//         }
+//     );
+// });
 
-app.get("/games", (req, res) => {
-    db.query("SELECT * FROM games", (err, result) => {
-        if (err) {
-            console.log(err)
-        } else {
-            res.send(result)
-        }
+// app.get("/games", (req, res) => {
+//     db.query("SELECT * FROM games", (err, result) => {
+//         if (err) {
+//             console.log(err)
+//         } else {
+//             res.send(result)
+//         }
 
-    })
-})
+//     })
+// })
 
-app.put("/update",(req,res) => {
-    const id = req.body.id;
-    const game= req.body.game;
-    db.query("UPDATE games SET game = ? WHERE id = ? ",
-    [game,id],
-    (err,result) => {
-        if(err) {
-            console.log(err);
-        } else {
-            res.send(result);
-        }
-    }
-    );
-})
+// app.put("/update",(req,res) => {
+//     const id = req.body.id;
+//     const game= req.body.game;
+//     db.query("UPDATE games SET game = ? WHERE id = ? ",
+//     [game,id],
+//     (err,result) => {
+//         if(err) {
+//             console.log(err);
+//         } else {
+//             res.send(result);
+//         }
+//     }
+//     );
+// })
 
 
-app.delete("/delete/:id",(req,res) => {
-    const id = req.params.id;
-    db.query("DELETE FROM games WHERE id = ? ", id ,(err,result) => 
-    {
-        if(err) {
-            console.log(err);
-        } else {
-            res.send(result);
-        }
-    }
-    )
-})
+// app.delete("/delete/:id",(req,res) => {
+//     const id = req.params.id;
+//     db.query("DELETE FROM games WHERE id = ? ", id ,(err,result) => 
+//     {
+//         if(err) {
+//             console.log(err);
+//         } else {
+//             res.send(result);
+//         }
+//     }
+//     )
+// })
 
 app.listen(3001, () => {
     console.log("Server running on port 3001")
