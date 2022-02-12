@@ -37,4 +37,19 @@ router.post("/games", (req, res) => {
     })
 })
 
+router.put("/update",(req,res) => {
+    const gid = req.body.gid;
+    const gName= req.body.game;
+    db.query("UPDATE games SET gName = ? WHERE gid = ? ",
+    [gName,gid],
+    (err,result) => {
+        if(err) {
+            console.log(err);
+        } else {
+            res.send(result);
+        }
+    }
+    );
+})
+
 module.exports = router;

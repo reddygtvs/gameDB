@@ -46,6 +46,24 @@ const Publish = ( {usernamedisplay} ) => {
       setGameList(response.data); 
     })
   }
+
+  const updateGame = (gid) => {
+    Axios.put('http://localhost:3001/publisher/update',{game: newgame,gid: gid}).then((response) => {
+      alert("update");
+      setGameList(gameList.map((val) => {
+        return val.gid === gid ? {
+          gName: newgame,
+          size: val.size,
+          region: val.region,
+          gametype: val.gametype,
+          year: val.year,
+          publisher: val.pubname
+        } : val;
+      }
+      
+      ));
+    });
+  };
   return (
     <div className="App">
       
@@ -71,13 +89,13 @@ const Publish = ( {usernamedisplay} ) => {
       <h3> Year: {val.year}</h3>
       <h3> Publisher: {val.pubname}</h3>
       </div>
-      {/* <div><TextField id="outlined-basic" label="EDITED GAME" variant="outlined" type="text" onChange ={(event) => {setNewGame(event.target.value);}} />
+      <div><TextField id="outlined-basic" label="EDITED GAME" variant="outlined" type="text" onChange ={(event) => {setNewGame(event.target.value);}} />
       <div>
-      <Button variant="contained" onClick={() => {updateGame(val.id)}}>UPDATE</Button>
-      <Button variant="contained" onClick={() => {deleteGame(val.id)}}>Delete</Button>
+      <Button variant="contained" onClick={() => {updateGame(val.gid)}}>UPDATE</Button>
+      {/* <Button variant="contained" onClick={() => {deleteGame(val.id)}}>Delete</Button> */}
       </div>
       
-      </div> */}
+      </div>
       </div>
          })}      
 
