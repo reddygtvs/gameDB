@@ -79,7 +79,7 @@ const Publish = ( {usernamedisplay} ) => {
       <h1>Enter Game Input Details:</h1>
       
       <TextField id="outlined-basic" label="GAME" variant="outlined" type="text" onChange={(event) => setGame(event.target.value)}/>
-      <TextField id="outlined-basic" label="SIZE(MB)" variant="outlined" type="number" onChange={(event) => setSize(event.target.value)}/>
+      <TextField id="outlined-basic" label="SIZE(GB)" variant="outlined" type="number" onChange={(event) => setSize(event.target.value)}/>
       <TextField id="outlined-basic" label="REGION" variant="outlined" type="text" onChange={(event) => setRegion(event.target.value)}/>
       <TextField id="outlined-basic" label="GENRE" variant="outlined" type="text" onChange={(event) => setGenre(event.target.value)}/>
       <TextField id="outlined-basic" label="YEAR RELEASED" variant="outlined" type="number" onChange={(event) => setYear(event.target.value)}/>

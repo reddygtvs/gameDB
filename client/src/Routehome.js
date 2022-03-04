@@ -17,6 +17,10 @@ function Routehome() {
   const [usernamedisplay, setUsernameDisplay] = useState("Guest")
   const [emaildisplay, setEmailDisplay] = useState("")
   const [passworddisplay, setPasswordDisplay] = useState("")
+  const[gamelistall, setGameListAll] = useState([])
+
+  
+
   if (logstate == 1) {
   return (<div>
       <Router>

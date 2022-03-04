@@ -7,6 +7,7 @@ function Addgame() {
     const [gid,setGameId] = useState(0);
     const [userGame,setUserGame] = useState([]);
     const [gName, setGname] = useState("");
+    const [publisher, setPublisher] = useState("")
     const createUsert = () => {
         console.log("\n",username,"\n",gid)
         Axios.post('http://localhost:3001/user/create',{
@@ -21,6 +22,14 @@ function Addgame() {
             }])
           }).catch(err => console.log(err))
         };
+        // const getGames = () => {
+        //   Axios.post("http://localhost:3001/publisher/games",{
+        //     usernamedisplay: usernamedisplay,
+        //   }).then((response) => {
+        //     console.log(response.data);
+        //     setGameList(response.data); 
+        //   })
+        // }
     
         const getUserGame = () => {
           Axios.get('http://localhost:3001/user/usertables').then((response) => {
@@ -54,6 +63,7 @@ function Addgame() {
             </div>
             <div className="gameInfo">
             <button onClick={getUserGame}>ShowUsers</button>
+
             {userGame.map((val,key) => {
               return <div key={key} className="showusergames">
               <div>
