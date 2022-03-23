@@ -28,8 +28,8 @@ function Routehome() {
     <Routes>
     <Route exact path="/" element={<App logstate={logstate} setLogstate={setLogstate} usernamedisplay={usernamedisplay}/>} />
       <Route exact path="/logout" element={<Logout logstate={logstate} setLogstate={setLogstate} setUsernameDisplay={setUsernameDisplay}/>} />
-      <Route exact path="/display" element={<Display usernamedisplay={usernamedisplay}/>} />
-      <Route exact path="/addgame" element={<Addgame />} />
+      <Route exact path="/display" element={<Display logstate={logstate} usernamedisplay={usernamedisplay}/>} />
+      <Route exact path="/addgame" element={<Addgame usernamedisplay={usernamedisplay}/>} />
       <Route exact path="/about" element={<About />} />
     </Routes>
 
@@ -42,7 +42,7 @@ function Routehome() {
     <Routes>
     <Route exact path="/" element={<App logstate={logstate} setLogstate={setLogstate} usernamedisplay={usernamedisplay}/>} />
       <Route exact path="/logout" element={<Logout logstate={logstate} setLogstate={setLogstate} setUsernameDisplay={setUsernameDisplay}/>} />
-      <Route exact path="/display" element={<Display />} />
+      <Route exact path="/display" element={<Display logstate={logstate} usernamedisplay={usernamedisplay}/>} />
       <Route exact path="/publish" element={<Publish usernamedisplay={usernamedisplay}/>} />
       <Route exact path="/about" element={<About />} />
     </Routes>
@@ -56,7 +56,7 @@ function Routehome() {
     <Routes>
     <Route exact path="/" element={<App logstate={logstate} setLogstate={setLogstate} usernamedisplay={usernamedisplay}/>} />
       <Route exact path="/login" element={<Login logstate={logstate} setLogstate={setLogstate} setUsernameDisplay={setUsernameDisplay}/>} />
-      <Route exact path="/display" element={<Display />} />
+      <Route exact path="/display" element={<Display logstate={logstate} usernamedisplay={usernamedisplay}/>} />
       <Route exact path="/addpublish" element={<Addpublish />} />
     </Routes>
 

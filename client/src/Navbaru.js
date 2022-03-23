@@ -50,7 +50,7 @@ function Navbaru() {
               Display
             </Link>
             <Link to="/addgame" className={classes.link}>
-              Addgame
+              Owned
             </Link>
             <Link to="/about" className={classes.link}>
               About

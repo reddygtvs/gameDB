@@ -12,9 +12,12 @@ const Logout = ({logstate, setLogstate, setUsernameDisplay}) => {
 
     }
   return (
-    <div>
-        <h1>Do you want to Logout?/</h1>
+    <div className="App">
+        <h1>Do you want to Logout?</h1>
+        <div>
         <button onClick={setLogo}>Logout</button>
+        </div>
+        
         </div>
   )
 }
