@@ -17,67 +17,7 @@ import './IconButtons.js';
 
 const App = ( {logstate, setLogstate, usernamedisplay} ) => {
 
-  // const [game, setGame] = useState("")
-  // const [size, setSize] = useState(0)
-  // const [publisher, setPublisher] = useState("")
-  // const [region, setRegion] = useState("")
-  // const [year, setYear] = useState(0)
   
-  // const[newgame,setNewGame] = useState(0);
-  // const [gameList, setGameList] = useState([])
-
-  // const addGame = () => {
-  //   console.log(game,"\n",size,"\n",publisher,"\n",region,"\n",year,"\n")
-  //   Axios.post("http://localhost:3001/create", {
-  //     game: game,
-  //     size: size,
-  //     publisher: publisher,
-  //     region: region,
-  //     year: year,
-
-  //   }).then(() => {
-  //     console.log("Success!!")
-      
-  //   }).catch(err => console.log(err))
-  // }
-
-  // const getGames = () => {
-  //   Axios.get("http://localhost:3001/games").then((response) => {
-  //     setGameList(response.data); 
-  //   })
-  // }
-
-  // const updateGame = (id) => {
-  //   Axios.put('http://localhost:3001/update',{game: newgame,id: id}).then((response) => {
-  //     alert("update");
-  //     setGameList(gameList.map((val) => {
-  //       return val.id === id ? {
-  //         game: newgame,
-  //         size: val.size,
-  //         publisher: val.publisher,
-  //         region: val.region,
-  //         year: val.year,
-  //       } : val;
-  //     }
-      
-  //     ));
-  //   });
-  // };
-  // const deleteGame = (gid) => {
-  //   Axios.delete(`http://localhost:3001/delete/${gid}`).then((response) => {
-  //     setGameList(gameList.filter((val) => {
-  //       return val.gid != gid;
-  //     })
-  //     );
-  //   });
-  // };
-
-
-
-
-
-  // const displayInfo = () => 
-  //   console.log(game,"\n",size,"\n",publisher,"\n",region,"\n",year,"\n")
   return (
     
     

@@ -2,26 +2,22 @@ import React, { useState, props, useEffect } from 'react';
 import './App.css';
 import Axios from 'axios';
 import { useNavigate } from "react-router-dom";
-import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+
 
 
 
 const Login = ( {logstate, setLogstate, setUsernameDisplay, setPasswordDisplay} ) => {
   const [pubname,setPubName] = useState("");
-  const [username,setUserName] = useState("");
   const [pubnamecheck, setPubNameCheck] = useState("")
-  const [usernamecheck, setUsernameCheck] = useState("")
+  
     const [email,setEmail] = useState("");
     const[pass,setPass] = useState("");
     const[password,setPassword] = useState("");
-    const[newemail,setNewEmail] = useState("");
-    // const [pubList,setPubList] = useState([]);
-    // const [userList,setUserList] = useState([]);
+    
     const [loginstatus, setLoginStatus] = useState([])
     const navigate = useNavigate();
     const [togglereg, setToggleReg] = useState("user")
 
-    const [togglelog, setToggleLog] = useState("publisher")
 
     const setlogu = () => {
       setUsernameDisplay(pubnamecheck)

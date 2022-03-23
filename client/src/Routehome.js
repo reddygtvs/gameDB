@@ -15,10 +15,7 @@ import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 function Routehome() {
   const [logstate, setLogstate] = useState(0)
   const [usernamedisplay, setUsernameDisplay] = useState("Guest")
-  const [emaildisplay, setEmailDisplay] = useState("")
-  const [passworddisplay, setPasswordDisplay] = useState("")
-  const[gamelistall, setGameListAll] = useState([])
-
+ 
   
 
   if (logstate == 1) {
