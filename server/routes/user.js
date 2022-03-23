@@ -19,6 +19,17 @@ router.get("/getgames",(req,res)=>{
     
 })
 
+router.get("/gamesall", (req, res) => {
+    db.query("SELECT * FROM games", (err, result) => {
+        if (err) {
+            console.log(err)
+        } else {
+            res.send(result)
+        }
+
+    })
+})
+
 router.post("/create",(req,res) => {
     const username= req.body.username;
     const gid = req.body.gid;
